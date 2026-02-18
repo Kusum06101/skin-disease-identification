@@ -35,3 +35,21 @@ This project combines computer vision and healthcare AI to assist early detectio
 
 # skin-disease-identification
 Deep learning web application for classifying 31 skin diseases with Ayurvedic recommendations
+
+## Demo Screenshots
+
+### Homepage
+![Homepage](results/screenshots/homepage.png)
+
+### Prediction Example 1
+![Prediction 1](results/screenshots/prediction1.png)
+
+### Prediction Example 2
+![Prediction 2](results/screenshots/prediction2.png)
+
+### Prediction Example 3
+![Prediction 3](results/screenshots/prediction3.png)
+
+### System Workflow
+![Workflow](results/screenshots/workflow.png)
+
