@@ -1,0 +1,7 @@
+torch>=2.0.0
+Pillow>=9.0.0
+transformers>=4.40.0
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.1
+jinja2>=3.0.0

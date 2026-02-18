@@ -1,0 +1,250 @@
+{
+    "Basal Cell Carcinoma": {
+        "common_name": "BCC / Rodent Ulcer",
+        "cause": "Most common form of skin cancer, often linked to long-term exposure to UV radiation (sun/tanning beds).",
+        "remedy": "Requires surgical excision (Mohs surgery) as the definitive cure. No topical home remedy is effective.",
+        "usage": "Consult a dermatologist immediately for biopsy and treatment planning. Early detection is key.",
+        "note": "BCC rarely metastasizes but can cause local tissue destruction if left untreated. It appears as a pearly nodule.",
+        "ayurvedic_diagnosis": "Can be correlated to Granthi (minor neoplasm) or Arbuda (malignant neoplasm). Involves vitiation of all three Doshas (Tridoshaja Vyadhi), particularly Kapha and Rakta (blood tissue)."
+    },
+    "Darier_s Disease": {
+        "common_name": "Keratosis Follicularis",
+        "cause": "A rare genetic skin disorder caused by mutations in the ATP2A2 gene, leading to abnormal keratinization.",
+        "remedy": "Topical retinoids and oral vitamin A derivatives (acitretin) help control keratin buildup.",
+        "usage": "Apply topical retinoids under dermatological supervision once daily at night to affected areas.",
+        "note": "Avoid heat and sweating as they can worsen the condition. Maintain good hygiene and hydration.",
+        "ayurvedic_diagnosis": "Corresponds to a type of Kshudra Kushtha (minor skin disorder) involving predominant Pitta and Kapha Dosha vitiation, affecting Mamsa and Meda Dhatu (muscle and fat tissues) leading to abnormal cellular growth (keratinization)."
+    },
+    "Epidermolysis Bullosa Pruriginosa": {
+        "common_name": "EB Pruriginosa",
+        "cause": "A rare inherited blistering skin disorder due to COL7A1 gene mutations affecting collagen.",
+        "remedy": "Focuses on wound care, avoiding trauma, and using topical corticosteroids or tacrolimus.",
+        "usage": "Apply mild topical corticosteroid to pruritic nodules twice daily and keep skin protected with dressings.",
+        "note": "Genetic counseling is advised. Avoid scratching to prevent infection and scarring.",
+        "ayurvedic_diagnosis": "This is a Vata-Pitta Pradhana Vyadhi (Vata and Pitta dominant disorder). Vata causes the fragility (Tvaka Bheda) and itching (Kandu), while Pitta causes heat and inflammation, leading to blistering (Sphota)."
+    },
+    "Hailey-Hailey Disease": {
+        "common_name": "Familial Benign Chronic Pemphigus",
+        "cause": "Genetic disorder due to ATP2C1 mutation causing skin fragility and recurrent erosions.",
+        "remedy": "Topical corticosteroids or tacrolimus ointment to control inflammation.",
+        "usage": "Apply thin layer of corticosteroid cream to lesions twice daily until cleared.",
+        "note": "Avoid heat, friction, and sweating which trigger flare-ups. Maintain skin dryness.",
+        "ayurvedic_diagnosis": "Likely a Vata-Pitta disorder aggravated by heat and friction. Pitta causes burning and erosion (Daha, Vidahi), and Vata causes dryness and recurrent skin breakage (Rukshata, Tvaka Bheda)."
+    },
+    "Herpes Simplex": {
+        "common_name": "Cold Sore / Genital Herpes",
+        "cause": "Viral infection caused by Herpes Simplex Virus (HSV-1 or HSV-2).",
+        "remedy": "Antiviral creams (acyclovir) or oral antiviral medication for faster healing.",
+        "usage": "Apply acyclovir cream five times daily for 4–5 days at the first sign of outbreak.",
+        "note": "Highly contagious. Avoid direct skin contact during active lesions.",
+        "ayurvedic_diagnosis": "Can be categorized as a type of Visarpa or Kaksha. It is a Pitta-Rakta Pradhana Vyadhi (Pitta and blood-dominant) characterized by burning, redness, and small blisters (Sphota). Recurrence is due to residual Dosha in the tissues."
+    },
+    "Impetigo": {
+        "common_name": "School Sores",
+        "cause": "Bacterial infection by Staphylococcus aureus or Streptococcus pyogenes.",
+        "remedy": "Topical antibiotic ointment (mupirocin) or oral antibiotics for widespread infection.",
+        "usage": "Apply mupirocin ointment 3 times daily for 5–7 days. Keep the area clean.",
+        "note": "Very contagious. Wash hands frequently and avoid sharing towels.",
+        "ayurvedic_diagnosis": "A Kapha-Pitta disorder (Pus-forming). The characteristic weeping, honey-crusted lesions align with Pitta (inflammation, pus) and Kapha (fluid, stickiness) vitiation in the skin (Twak) and blood (Rakta)."
+    },
+    "Larva Migrans": {
+        "common_name": "Creeping Eruption",
+        "cause": "Skin infestation caused by hookworm larvae penetrating the skin, commonly from contaminated soil.",
+        "remedy": "Oral anti-parasitic medication such as albendazole or ivermectin.",
+        "usage": "Take prescribed oral antiparasitic for 3–5 days as directed by a physician.",
+        "note": "Avoid walking barefoot on beaches or soil contaminated with animal feces.",
+        "ayurvedic_diagnosis": "A condition caused by external organisms (Krimi Roga). The intense itching (Kandu) and migrating rash pattern are primarily driven by aggravated Vata and secondary Kapha vitiation, blocking channels (Srotas) beneath the skin."
+    },
+    "Leprosy Borderline": {
+        "common_name": "Borderline Hansen’s Disease",
+        "cause": "Chronic bacterial infection by Mycobacterium leprae affecting skin and nerves.",
+        "remedy": "Multidrug therapy (MDT) combining dapsone, rifampicin, and clofazimine.",
+        "usage": "Follow WHO-recommended MDT regimen under supervision for 12 months.",
+        "note": "Early treatment prevents disability and transmission.",
+        "ayurvedic_diagnosis": "A type of Mahakushtha (major skin disease). It is a Tridoshaja condition (involving all three doshas) affecting the deep tissues (Dhatus), specifically Rasa, Rakta, Mamsa, Meda, Asthi, Majja and Shukra."
+    },
+    "Leprosy Lepromatous": {
+        "common_name": "Lepromatous Hansen’s Disease",
+        "cause": "Severe form of leprosy with high bacterial load due to weak immune response.",
+        "remedy": "Multidrug therapy with dapsone, rifampicin, and clofazimine.",
+        "usage": "Adhere to long-term MDT protocol under medical supervision.",
+        "note": "Regular follow-up is essential to monitor nerve involvement and prevent deformities.",
+        "ayurvedic_diagnosis": "A severe Kapha-Vata dominance in Mahakushtha. Kapha causes thick lesions and nodules (Granthi), while Vata causes nerve damage (Nadivrana), loss of sensation, and pain."
+    },
+    "Leprosy Tuberculoid": {
+        "common_name": "Tuberculoid Hansen’s Disease",
+        "cause": "Localized form of leprosy with few lesions due to strong immune response.",
+        "remedy": "Multidrug therapy (MDT) for 6 months using rifampicin and dapsone.",
+        "usage": "Follow supervised therapy as per WHO guidelines.",
+        "note": "Early diagnosis prevents nerve damage and spread.",
+        "ayurvedic_diagnosis": "A localized, less severe Kapha-Vata type of Kushtha with distinct patches and marked anesthesia (Sparsha Hani - loss of sensation). Strong immune response limits the spread of Doshas."
+    },
+    "Lichen Planus": {
+        "common_name": "Purple Itchy Rash",
+        "cause": "Inflammatory condition possibly due to immune response against skin cells.",
+        "remedy": "Topical corticosteroids or oral antihistamines to reduce itching and inflammation.",
+        "usage": "Apply corticosteroid cream twice daily for 2–4 weeks.",
+        "note": "Avoid scratching to prevent skin thickening and pigmentation.",
+        "ayurvedic_diagnosis": "Correlated with Vicharchika or Kitibha. Primarily a Pitta-Kapha disorder where Pitta causes inflammation and purple color (Raga), and Kapha causes the thick plaques and chronic itch (Kandu)."
+    },
+    "Lupus Erythematosus Chronicus Discoides": {
+        "common_name": "Discoid Lupus",
+        "cause": "Autoimmune condition where the immune system attacks skin cells causing chronic lesions.",
+        "remedy": "Topical corticosteroids or calcineurin inhibitors.",
+        "usage": "Apply topical corticosteroid to lesions twice daily. Use sunscreen regularly.",
+        "note": "Avoid sunlight exposure which may trigger flare-ups.",
+        "ayurvedic_diagnosis": "A Pitta-Rakta Pradhana Vyadhi (Pitta and blood-dominant) aggravated by heat (Sunlight). Pitta causes inflammation, redness, and erosion (Daha), leading to chronic scarring and permanent tissue changes."
+    },
+    "Melanoma": {
+        "common_name": "Skin Cancer (Melanocyte Origin)",
+        "cause": "Malignant growth of melanocytes, primarily caused by UV radiation exposure.",
+        "remedy": "Surgical removal and possible immunotherapy or chemotherapy.",
+        "usage": "Seek immediate dermatological evaluation for biopsy and staging.",
+        "note": "Early detection dramatically improves survival. Watch for changing moles.",
+        "ayurvedic_diagnosis": "A form of Arbuda (malignant neoplasm). Involves severe, deep vitiation of all three Doshas affecting the Meda (fat) and Mamsa (muscle) Dhatus. The dark pigmentation is a sign of deep Rakta (blood tissue) and Pitta vitiation."
+    },
+    "Molluscum Contagiosum": {
+        "common_name": "Water Warts",
+        "cause": "Viral infection by Molluscum contagiosum virus (a poxvirus).",
+        "remedy": "Lesions can be treated with cryotherapy, curettage, or topical acids.",
+        "usage": "Apply topical salicylic acid or tretinoin cream daily as advised.",
+        "note": "Usually self-limiting within months. Avoid scratching or shaving over lesions.",
+        "ayurvedic_diagnosis": "A Kapha and Meda Dhatu disorder. The localized, painless, dome-shaped papules are indicative of Kapha dominance and obstruction of the channels (Srotas) in the fat tissue (Meda)."
+    },
+    "Mycosis Fungoides": {
+        "common_name": "Cutaneous T-Cell Lymphoma",
+        "cause": "Rare cancer of T-lymphocytes that primarily affects the skin.",
+        "remedy": "Phototherapy or topical corticosteroids for mild cases; systemic therapy for advanced stages.",
+        "usage": "Undergo regular dermatologic monitoring and follow prescribed treatment plan.",
+        "note": "Chronic condition requiring long-term management by specialists.",
+        "ayurvedic_diagnosis": "Correlated with Granthi or a persistent form of Kushtha. A Tridoshaja condition with the development of abnormal tissue growth (Arbuda) in the skin (lymphocytes are affected), indicating involvement of Rasa and Rakta Dhatus."
+    },
+    "Neurofibromatosis": {
+        "common_name": "NF / Von Recklinghausen Disease",
+        "cause": "Genetic disorder causing benign nerve sheath tumors and café-au-lait spots.",
+        "remedy": "No cure; treatment focuses on surgical removal of problematic growths.",
+        "usage": "Regular monitoring for tumor growth or neurological symptoms.",
+        "note": "Genetic counseling recommended for affected families.",
+        "ayurvedic_diagnosis": "The fibrous nodules are a form of Granthi (benign tumor) primarily caused by aggravated Kapha and Meda Dhatu vitiation, leading to localized overgrowth. The nerve involvement is due to aggravated Vata."
+    },
+    "Papilomatosis Confluentes And Reticulate": {
+        "common_name": "Confluent and Reticulated Papillomatosis",
+        "cause": "Unclear cause; possibly linked to abnormal keratinization or bacterial infection.",
+        "remedy": "Oral minocycline or topical retinoids can be effective.",
+        "usage": "Take oral minocycline 100mg daily for 6 weeks under supervision.",
+        "note": "Recurrences are common; maintain good hygiene.",
+        "ayurvedic_diagnosis": "A Kapha Pradhana Vyadhi due to the warty/papillomatous nature (Kshudra Kushtha). The confluence and hyperpigmentation suggest involvement of Kapha (thickening) and Rakta (pigmentation)."
+    },
+    "Pediculosis Capitis": {
+        "common_name": "Head Lice Infestation",
+        "cause": "Infestation by Pediculus humanus capitis (head louse).",
+        "remedy": "Topical permethrin 1% lotion or natural alternatives like neem oil.",
+        "usage": "Apply lotion to scalp for 10 minutes, rinse, and repeat after 7 days.",
+        "note": "Wash bedding and combs to prevent re-infestation.",
+        "ayurvedic_diagnosis": "A Krimi Roga (parasitic condition) in the scalp. The severe itching (Kandu) is due to the activation of Vata and Kapha Dosha by the parasites. Treatment focuses on local application to destroy the organisms."
+    },
+    "Pityriasis Rosea": {
+        "common_name": "Herald Patch Rash",
+        "cause": "Possibly viral; exact cause unknown, often self-limiting.",
+        "remedy": "Moisturizers and antihistamines for itch relief.",
+        "usage": "Apply calamine lotion or hydrocortisone cream twice daily.",
+        "note": "Usually resolves in 6–8 weeks without treatment.",
+        "ayurvedic_diagnosis": "Correlated with a type of Visarpa or Kshudra Kushtha. Predominantly a Pitta-Rakta disorder causing redness and scaly patches. It often resolves spontaneously due to the body’s own defense mechanisms, indicating a superficial Dosha involvement."
+    },
+    "Porokeratosis Actinic": {
+        "common_name": "Actinic Porokeratosis",
+        "cause": "Abnormal keratinization process triggered by UV exposure.",
+        "remedy": "Topical 5-fluorouracil or retinoids under supervision.",
+        "usage": "Apply thin layer to affected areas once daily for several weeks.",
+        "note": "Monitor for malignant transformation in chronic cases.",
+        "ayurvedic_diagnosis": "A Vata-Kapha dominance leading to abnormal keratinization (Kshudra Kushtha). Sun exposure ignites Pitta and increases the dryness (Vata) and abnormal growth (Kapha)."
+    },
+    "Psoriasis": {
+        "common_name": "Chronic Plaque Psoriasis",
+        "cause": "Autoimmune disorder causing rapid skin cell turnover leading to scaly plaques.",
+        "remedy": "Topical corticosteroids, vitamin D analogs, or phototherapy.",
+        "usage": "Apply medicated ointment twice daily and keep skin moisturized.",
+        "note": "Stress, infection, and cold weather can trigger flare-ups.",
+        "ayurvedic_diagnosis": "Corresponds to Kitibha Kushtha or Ekakushtha. A Kapha-Vata disorder where Vata causes dryness and scales (Rukshata, Daruna) and Kapha causes thickening and itching (Kandu). Blood (Rakta) is also vitiated."
+    },
+    "Tinea Corporis": {
+        "common_name": "Ringworm of the Body",
+        "cause": "Fungal infection (dermatophytes) spread by direct contact.",
+        "remedy": "Topical antifungal creams such as clotrimazole or terbinafine.",
+        "usage": "Apply antifungal twice daily for 2–4 weeks. Keep area dry.",
+        "note": "Avoid sharing towels or clothing. Seek oral antifungals if persistent.",
+        "ayurvedic_diagnosis": "Known as Dadru in Ayurveda. It is a Kapha-Pitta disorder, where Kapha causes the itching and elevation, and Pitta causes the redness and burning sensation, leading to a circular, inflamed rash."
+    },
+    "Tinea Nigra": {
+        "common_name": "Superficial Fungal Pigmented Patch",
+        "cause": "Caused by Hortaea werneckii fungus infecting stratum corneum.",
+        "remedy": "Topical antifungal creams are effective.",
+        "usage": "Apply antifungal twice daily for 2 weeks until discoloration clears.",
+        "note": "Benign and non-contagious once treated.",
+        "ayurvedic_diagnosis": "A Kshudra Kushtha with a strong component of Rakta (blood/pigmentation) and Kapha vitiation, leading to blackish, non-inflammatory patches on the skin."
+    },
+    "Tungiasis": {
+        "common_name": "Sand Flea Infestation",
+        "cause": "Infestation by Tunga penetrans (sand flea) burrowing into the skin.",
+        "remedy": "Careful extraction and topical antibiotic application.",
+        "usage": "Seek medical removal; apply antiseptic daily post-extraction.",
+        "note": "Wear footwear in endemic areas to prevent reinfection.",
+        "ayurvedic_diagnosis": "Another form of Krimi Roga causing localized inflammation. The burrowing causes pain and inflammation (Pitta-Vata), and subsequent swelling is due to Kapha accumulation in the affected area."
+    },
+    "actinic keratosis": {
+        "common_name": "Solar Keratosis",
+        "cause": "Precancerous skin lesion due to long-term UV radiation exposure.",
+        "remedy": "Cryotherapy or topical 5-fluorouracil under medical supervision.",
+        "usage": "Apply 5-FU cream as prescribed for 2–4 weeks.",
+        "note": "Monitor for progression to squamous cell carcinoma.",
+        "ayurvedic_diagnosis": "A Vata-Kapha disorder (dry, rough growth) exacerbated by Pitta (heat/sun exposure). It can progress to a more severe Arbuda if the vitiation of Doshas and Dhatus deepens."
+    },
+    "dermatofibroma": {
+        "common_name": "Benign Fibrous Skin Nodule",
+        "cause": "Reactive process following minor skin injury or insect bite.",
+        "remedy": "Usually requires no treatment; excision for cosmetic reasons.",
+        "usage": "If irritated, apply mild corticosteroid cream for relief.",
+        "note": "Firm, dimpled lesion — benign and stable.",
+        "ayurvedic_diagnosis": "A type of Granthi (nodule) caused by localized Kapha and Meda vitiation and accumulation, often triggered by trauma (Vata). It is benign and stable due to low Pitta involvement."
+    },
+    "nevus": {
+        "common_name": "Mole / Birthmark",
+        "cause": "Clustered melanocytes causing pigmented skin spots.",
+        "remedy": "No treatment needed unless suspicious changes occur.",
+        "usage": "Regularly monitor for asymmetry or color change.",
+        "note": "Seek evaluation for evolving or irregular moles.",
+        "ayurvedic_diagnosis": "A benign pigmented lesion (Tilak Kala). The black/dark spots indicate a stable vitiation of Rakta Dhatu (blood/pigmentation) under the influence of Pitta and Kapha."
+    },
+    "pigmented benign keratosis": {
+        "common_name": "Benign Pigmented Skin Growth",
+        "cause": "Noncancerous growth due to aging or sun exposure.",
+        "remedy": "Cryotherapy or laser removal for cosmetic purposes.",
+        "usage": "Consult dermatologist for removal if symptomatic.",
+        "note": "Distinguish from melanoma by dermoscopic examination.",
+        "ayurvedic_diagnosis": "A benign, stable growth consistent with Kapha dominance and Rakta vitiation leading to localized hyperpigmentation and thickening (Kshudra Kushtha)."
+    },
+    "seborrheic keratosis": {
+        "common_name": "Wart-like Growth / Age Wart",
+        "cause": "Waxy, non-cancerous growths common in older adults due to genetics and age.",
+        "remedy": "Apply diluted Apple Cider Vinegar (folk remedy) or opt for cryotherapy.",
+        "usage": "Apply 1:1 ACV-water mix twice daily for 7–10 days if mild.",
+        "note": "If irritation or color change occurs, seek professional removal.",
+        "ayurvedic_diagnosis": "A benign, age-related Kapha accumulation in the superficial tissues (Twak and Rasa Dhatus), leading to waxy, elevated growths (Kshudra Kushtha)."
+    },
+    "squamous cell carcinoma": {
+        "common_name": "SCC / Skin Cancer (Keratinocyte Origin)",
+        "cause": "Malignant tumor due to prolonged UV exposure or chronic wounds.",
+        "remedy": "Surgical excision or cryotherapy for localized lesions.",
+        "usage": "Prompt dermatologic evaluation and removal required.",
+        "note": "Can metastasize if untreated. Use sunscreen regularly.",
+        "ayurvedic_diagnosis": "A form of Arbuda (malignant neoplasm). Primarily Pitta and Rakta vitiation causing ulceration and bleeding, combined with Kapha which causes the growth and hardness."
+    },
+    "vascular lesion": {
+        "common_name": "Hemangioma / Vascular Birthmark",
+        "cause": "Abnormal proliferation of blood vessels in the skin.",
+        "remedy": "Laser therapy or observation depending on severity.",
+        "usage": "Seek dermatologic advice for cosmetic or functional concerns.",
+        "note": "Usually benign and may regress over time.",
+        "ayurvedic_diagnosis": "A Rakta Dhatu (blood tissue) and Pitta disorder, causing the proliferation of blood vessels (Rakta Gulma or Raktaja Granthi). Pitta is responsible for the red/purplish color."
+    }
+}
