@@ -33,8 +33,16 @@ This project combines computer vision and healthcare AI to assist early detectio
 
 ## Project Structure
 
-# skin-disease-identification
-Deep learning web application for classifying 31 skin diseases with Ayurvedic recommendations
+```
+skin-disease-identification/
+│
+├── app/
+├── results/
+├── requirements.txt
+└── README.md
+```
+
+---
 
 ## Demo Screenshots
 
@@ -53,3 +61,39 @@ Deep learning web application for classifying 31 skin diseases with Ayurvedic re
 ### System Workflow
 ![Workflow](results/screenshots/workflow.png)
 
+---
+
+## How to Run the Project
+
+```
+git clone https://github.com/YOUR-USERNAME/skin-disease-identification.git
+cd skin-disease-identification
+pip install -r requirements.txt
+python app/main.py
+```
+
+Open your browser and go to:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## Results
+
+Model achieved **95.57% validation accuracy** across diverse skin tones and lighting conditions.
+
+---
+
+## Authors
+
+Kusum C and research team
+
+---
+
+## Future Work
+
+- Mobile deployment
+- Explainable AI integration
+- Larger dataset expansion
