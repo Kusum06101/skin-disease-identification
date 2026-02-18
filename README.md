@@ -1,4 +1,6 @@
 # Skin Disease Identification using Deep Learning
+Live Demo: https://huggingface.co/spaces/KusumC/skin-disease-website
+
 
 A web-based deep learning application that classifies 31 skin diseases from medical images and provides Ayurvedic treatment recommendations.
 
