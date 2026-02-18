@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermVision AI - Skin Wellness Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Font Family */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        /* Define Ayurvedic Palette */
+        :root {
+            --color-primary: #166534; /* Dark Forest Green */
+            --color-accent: #34D399; /* Vibrant Light Green */
+            --color-background: #F8F5EE; /* Warm Cream/Beige */
+            --color-text: #1F2937; /* Dark Gray for main text */
+            --color-shadow: rgba(22, 101, 52, 0.2); /* Green shadow for depth */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            min-height: 100vh;
+        }
+
+        /* Nav and Headers */
+        .main-color-bg {
+            background-color: var(--color-primary);
+        }
+        .text-main-color {
+            color: var(--color-primary);
+        }
+        .hover-accent:hover {
+            color: var(--color-accent);
+            text-shadow: 0 0 1px var(--color-primary);
+        }
+        .shadow-green {
+            box-shadow: 0 4px 6px -1px var(--color-shadow), 0 2px 4px -2px var(--color-shadow);
+        }
+
+        /* FIX: STYLES FOR DISABLED BUTTON */
+        #analyzeBtn:disabled {
+            background-color: #D1D5DB !important;
+            color: #9CA3AF !important; 
+            cursor: not-allowed;
+            box-shadow: none !important;
+        }
+        
+        /* Style for the file input button (Now matches the theme) */
+        .custom-file-upload {
+            border: 2px solid var(--color-accent);
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 9999px; /* Pill shape */
+            color: var(--color-primary);
+            background-color: #ECFDF5; /* Very light green */
+            transition: all 0.2s;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        .custom-file-upload:hover {
+            background-color: var(--color-accent);
+            color: white;
+            box-shadow: 0 4px 10px rgba(52, 211, 153, 0.4);
+        }
+        .custom-file-upload input[type="file"] {
+            display: none;
+        }
+
+        /* Style for the preview container - the drop zone */
+        #imagePreviewContainer {
+            background-color: #FFFFFF; /* White card background */
+            border: 2px dashed #9CA3AF; 
+            border-radius: 12px;
+            padding: 1rem;
+            min-height: 280px;
+            position: relative;
+            transition: all 0.3s;
+        }
+        #imagePreviewContainer.drag-over {
+            border-color: var(--color-accent) !important;
+            background-color: #F0FFF4; /* Subtle hint of green on drag */
+        }
+
+        .upload-icon {
+            position: absolute;
+            color: #D1D5DB;
+            font-size: 4.5rem;
+            transition: color 0.3s;
+        }
+        #imagePreviewContainer:not(.has-image):hover .upload-icon {
+            color: #B4BFB8;
+        }
+        
+        /* Card Styling */
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px var(--color-shadow), 0 4px 6px -4px var(--color-shadow);
+            padding: 32px;
+        }
+        
+        /* Analysis Result Styling */
+        #analysisResult {
+             max-height: 550px; 
+             overflow-y: auto; 
+             padding: 32px;
+        }
+        #defaultMessage {
+             min-height: 550px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="sticky top-0 z-50 main-color-bg shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#analyzer" class="text-white text-3xl font-bold tracking-tight">
+                        DermVision <span class="text-yellow-300">AI</span>
+                    </a>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#analyzer" class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition duration-150">ANALYZER</a>
+                    <a href="#about" class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition duration-150">ABOUT US</a>
+                    <a href="#contact" class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition duration-150">CONTACT</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-16 px-4 sm:px-6 lg:px-8 min-h-full">
+        
+        <section id="analyzer" class="max-w-6xl mx-auto mb-16">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-extrabold text-main-color mb-3">
+                    <i class="fas fa-leaf mr-3"></i> Ayurvedic Skin Analyzer
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Upload an image to get a rapid, AI-powered assessment based on Ayurvedic principles.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div class="card space-y-8">
+                    <h2 class="text-2xl font-bold text-main-color border-b border-gray-200 pb-3">
+                        Data Input
+                    </h2>
+                    
+                    <form id="uploadForm" class="space-y-6">
+                        
+                        <div id="imagePreviewContainer" class="w-full flex items-center justify-center">
+                            <i class="fas fa-image upload-icon"></i>
+                            <img id="imagePreview" src="" alt="Image Preview" class="w-full h-full object-contain max-h-[350px] rounded-lg hidden">
+                        </div>
+
+                        <div class="flex justify-center pt-2">
+                            <label for="imageUpload" class="custom-file-upload">
+                                <i class="fas fa-camera mr-2"></i> SELECT IMAGE
+                            </label>
+                            <input type="file" id="imageUpload" accept="image/*" class="hidden" required>
+                        </div>
+                        
+                        <div class="pt-4 border-t border-gray-100">
+                            <button type="submit" id="analyzeBtn"
+                                class="w-full main-color-bg text-white py-3 rounded-full text-lg font-bold transition duration-300 hover:bg-green-700 shadow-green">
+                                <i class="fas fa-dna mr-2"></i> START ASSESSMENT
+                            </button>
+                            <div id="loadingSpinner" class="hidden text-center text-main-color font-semibold mt-4">
+                                <i class="fas fa-spinner fa-spin mr-2"></i> Analyzing Doshas...
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card space-y-6">
+                    <h2 class="text-2xl font-bold text-main-color border-b border-gray-200 pb-3">
+                        AI Wellness Report
+                    </h2>
+                    
+                    <div id="analysisResult" class="hidden">
+                        </div>
+
+                    <div id="defaultMessage" class="text-center flex flex-col items-center justify-center min-h-[550px] h-full">
+                        <i class="fas fa-search text-main-color text-6xl mb-4"></i>
+                        <p class="text-gray-600 text-lg font-medium">Your detailed Ayurvedic assessment will appear here after analysis.</p>
+                        <p class="text-gray-500 text-sm mt-2">Upload a photo to begin.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <hr class="max-w-6xl mx-auto border-gray-300 my-16">
+
+        <section id="about" class="max-w-6xl mx-auto py-8 mb-16">
+            <h2 class="text-3xl font-bold text-center text-main-color mb-8">
+                <i class="fas fa-hand-holding-heart mr-3"></i> Our Philosophy
+            </h2>
+            <div class="card grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                
+                <div class="p-4 border border-gray-100 rounded-lg">
+                    <i class="fas fa-balance-scale text-5xl text-accent mb-3"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-main-color">Dosha Balance</h3>
+                    <p class="text-gray-700 text-sm">Focused on Vata, Pitta, and Kapha principles for holistic skin health.</p>
+                </div>
+                
+                <div class="p-4 border border-gray-100 rounded-lg">
+                    <i class="fas fa-seedling text-5xl text-accent mb-3"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-main-color">Natural Wisdom</h3>
+                    <p class="text-gray-700 text-sm">Combining traditional Ayurvedic knowledge with cutting-edge AI technology.</p>
+                </div>
+                
+                <div class="p-4 bg-red-50 border border-red-300 rounded-lg">
+                    <i class="fas fa-user-md text-5xl text-red-600 mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2 text-red-700">Not a Doctor</h3>
+                    <p class="text-red-700 text-sm font-medium">This tool is educational and supportive only. Consult a Vaidya or physician.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="max-w-6xl mx-auto py-8">
+            <h2 class="text-3xl font-bold text-center text-main-color mb-8">
+                <i class="fas fa-envelope-open-text mr-3"></i> Connect with Us
+            </h2>
+            <div class="card max-w-2xl mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-accent focus:border-accent">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-accent focus:border-accent">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Your Inquiry</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-accent focus:border-accent"></textarea>
+                    </div>
+                    <button type="submit" onclick="alert('Thank you! Your inquiry has been received. (Simulation)')"
+                        class="w-full main-color-bg text-white py-3 rounded-full text-lg font-bold hover:bg-green-700 transition duration-300 shadow-green">
+                        <i class="fas fa-paper-plane mr-2"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="main-color-bg text-white mt-16">
+        <div class="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-gray-300 mb-2">
+                &copy; 2025 DermVision AI. Holistic Tech Solutions.
+            </p>
+            <p class="text-xs text-red-300 max-w-2xl mx-auto">
+                Medical Disclaimer: This application provides simulated predictions for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment.
+            </p>
+        </div>
+    </footer>
+
+
+    <script>
+        // --- Configuration ---
+        const API_URL = '/api/predict';
+
+        // --- Element References ---
+        const dropArea = document.getElementById('imagePreviewContainer');
+        const fileInput = document.getElementById('imageUpload');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const preview = document.getElementById('imagePreview');
+        const defaultMessage = document.getElementById('defaultMessage');
+        const resultBox = document.getElementById('analysisResult');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const uploadIcon = document.querySelector('.upload-icon');
+
+        // --- Core File Handling Logic ---
+
+        function processFile(file) {
+            if (!file || !file.type.startsWith('image/')) {
+                alert('ERROR: Only image files are supported for analysis.');
+                analyzeBtn.disabled = true;
+                return;
+            }
+
+            analyzeBtn.disabled = false;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.classList.remove('hidden');
+                uploadIcon.classList.add('hidden');
+                dropArea.classList.add('has-image');
+                
+                resultBox.classList.add('hidden');
+                defaultMessage.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(file);
+            fileInput.files = dataTransfer.files;
+        }
+
+        // --- Core Prediction Logic ---
+
+        document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault(); 
+
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            // UI changes for analysis start
+            resultBox.innerHTML = '';
+            resultBox.classList.add('hidden');
+            defaultMessage.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+            analyzeBtn.disabled = true; 
+
+            const formData = new FormData();
+            formData.append('file', file); 
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    body: formData,
+                });
+                const data = await response.json();
+
+                if (response.ok) {
+                    // *** CORRECTED MAPPING TO YOUR API STRUCTURE ***
+                    // Expected keys from your API data: predicted_disease, confidence, ayurvedic_diagnosis, remedy, usage, note
+                    const prediction = data.predicted_disease || 'Diagnosis Unavailable';
+                    const confidence = data.confidence || 0; 
+                    
+                    const ayurvedicDiagnosis = data.ayurvedic_diagnosis || 'Ayurvedic interpretation unavailable.';
+                    const remedy = data.remedy || 'No specific remedy provided.';
+                    const usage = data.usage || ''; // Usage can be an empty string if not applicable
+                    const note = data.note || 'Informational results.';
+                    
+                    // Combine remedy and usage for the display card
+                    // This creates the string: "Remedy Text (Usage Text)" if usage exists, otherwise just "Remedy Text"
+                    const wellnessRecommendations = `${remedy} ${usage ? '(' + usage + ')' : ''}`;
+                    
+                    const confidenceColor = confidence > 80 ? 'text-green-600' : confidence > 60 ? 'text-yellow-600' : 'text-red-600';
+                    const confidenceBarColor = confidence > 80 ? '#10B981' : confidence > 60 ? '#F59E0B' : '#EF4444'; 
+                    
+                    // --- Ayurvedic HTML Injection ---
+                    resultBox.innerHTML = `
+                        <div class="space-y-6">
+                            <h4 class="text-3xl font-bold text-main-color border-b border-accent pb-2">
+                                <i class="fas fa-leaf mr-3 text-accent"></i> ${prediction}
+                            </h4>
+                            
+                            <div class="p-4 bg-gray-50 rounded-lg space-y-2 border border-gray-200">
+                                <p class="text-xl font-semibold text-gray-700 flex justify-between items-center">
+                                    <span>AI Confidence:</span>
+                                    <span class="${confidenceColor} font-extrabold">${confidence.toFixed(2)}%</span>
+                                </p>
+                                <div class="w-full bg-gray-200 rounded-full h-3">
+                                    <div class="h-3 rounded-full" style="width: ${confidence}%; background-color: ${confidenceBarColor};"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="p-4 border border-green-300 rounded-lg bg-green-50">
+                                    <h5 class="text-xl font-bold text-green-800 mb-2 border-b border-green-200 pb-1">
+                                        <i class="fas fa-info-circle mr-2"></i> Ayurvedic Interpretation
+                                    </h5>
+                                    <p class="text-green-900 text-base leading-relaxed">${ayurvedicDiagnosis}</p>
+                                </div>
+
+                                <div class="p-4 border border-yellow-400 rounded-lg bg-yellow-50">
+                                    <h5 class="text-xl font-bold text-yellow-800 mb-2 border-b border-yellow-300 pb-1">
+                                        <i class="fas fa-hand-sparkles mr-2"></i> Wellness Recommendations
+                                    </h5>
+                                    <p class="text-yellow-900 text-base leading-relaxed">${wellnessRecommendations}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="p-3 bg-red-100 rounded-lg border border-red-400">
+                                <h5 class="text-sm font-bold text-red-700 mb-1">Important Note:</h5>
+                                <p class="text-red-900 text-xs">${note}</p>
+                            </div>
+                        </div>
+                    `;
+                    resultBox.classList.remove('hidden');
+
+                } else {
+                    const detail = data.detail || `Server error (${response.status}) occurred.`;
+                    throw new Error(detail);
+                }
+
+            } catch (error) {
+                resultBox.innerHTML = `
+                    <div class="text-center p-4 bg-red-100 border border-red-400 rounded-lg">
+                        <i class="fas fa-times-circle text-red-600 text-4xl mb-3"></i>
+                        <p class="text-red-700 font-semibold text-lg">Analysis Failed</p>
+                        <p class="text-gray-700 text-sm mt-1">Could not connect to the server or a processing error occurred.</p>
+                    </div>
+                `;
+                resultBox.classList.remove('hidden');
+            } finally {
+                loadingSpinner.classList.add('hidden');
+                analyzeBtn.disabled = false; 
+                document.getElementById('analysisResult').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // --- UI Handlers (Drag & Drop and Initialization) ---
+
+        // 1. Standard File Input Change Handler 
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            processFile(file);
+        });
+
+        // 2. DRAG AND DROP HANDLERS (Prevent default and visual feedback)
+        ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            }, false);
+            window.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            }, false);
+        });
+
+        ;['dragenter', 'dragover'].forEach(eventName => {
+            dropArea.addEventListener(eventName, () => {
+                dropArea.classList.add('drag-over'); 
+            }, false);
+        });
+        ;['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, () => {
+                dropArea.classList.remove('drag-over');
+            }, false);
+        });
+
+        // Handle the dropped files
+        dropArea.addEventListener('drop', function(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            
+            if (files.length) {
+                processFile(files[0]);
+            }
+        }, false);
+
+
+        // Initial setup
+        window.onload = function() {
+            defaultMessage.classList.remove('hidden');
+            analyzeBtn.disabled = true;
+            preview.classList.add('hidden');
+            uploadIcon.classList.remove('hidden');
+            dropArea.classList.remove('has-image');
+        };
+
+    </script>
+</body>
+</html>
