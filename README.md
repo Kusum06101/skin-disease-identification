@@ -39,7 +39,8 @@ skin-disease-identification/
 ├── app/
 ├── results/
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
