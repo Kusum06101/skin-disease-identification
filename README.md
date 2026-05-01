@@ -69,7 +69,7 @@ skin-disease-identification/
 ## How to Run the Project
 
 ```
-git clone https://github.com/YOUR-USERNAME/skin-disease-identification.git
+git clone https://github.com/Kusum06101/skin-disease-identification.git
 cd skin-disease-identification
 pip install -r requirements.txt
 python app/main.py
